@@ -46,6 +46,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'draw_menu.middleware.SqlQueryCounterMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -134,7 +135,7 @@ LOGGING = {
     },
     'loggers': {
         'django.db.backends': {
-            'level': 'DEBUG',
+            'level': 'INFO',
         },
     },
     'root': {
