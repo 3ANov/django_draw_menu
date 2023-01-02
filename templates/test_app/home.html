@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load draw_menu %}
 {% block extrahead %}
 
 <title>Главная</title>
@@ -8,5 +8,5 @@
 
 {% block content %}
     <h1 class="text-center">Разные меню</h1>
-{#{% draw_menu 'main_menu' %}#}
+{% draw_menu 'main_menu' %}
 {% endblock content %}

@@ -1,11 +1,16 @@
 from django import template
+from django.db.models import Count
 
-from draw_menu.models import Menu
+from draw_menu.models import Menu, MenuItem
 
 register = template.Library()
 
 
-@register.simple_tag(takes_context=True)
+@register.inclusion_tag('draw_menu/draw_menu.html', takes_context=True)
 def draw_menu(context, menu_name):
-    Menu.objects.get(menu_name=menu_name)
-    return
+    menu_items = MenuItem.objects.select_related('parent_menu_item').filter(menu_id__menu_name=menu_name,
+                                                                            parent_menu_item__isnull=True)
+
+    return {
+       'menu_items': menu_items
+    }

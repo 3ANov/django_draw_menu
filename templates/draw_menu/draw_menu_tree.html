@@ -1,0 +1,11 @@
+<li>{{ menu_item.menu_item_text }}
+        <ul>
+            {% if menu_item.children_menu_item %}
+                {% for child in menu_item.children_menu_item.all %}
+                    {% with menu_item=child template_name="draw_menu/draw_menu_tree.html" %}
+                       {% include template_name %}
+                    {% endwith %}
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </li>
