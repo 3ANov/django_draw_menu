@@ -1,7 +1,7 @@
-<li>{{ menu_item.menu_item_text }}
-        <ul>
-            {% if menu_item.children_menu_item %}
-                {% for child in menu_item.children_menu_item.all %}
+<li><a class="" href="{{ menu_item.link }}">{{ menu_item.menu_item_text }}</a></li>
+        <ul class="">
+            {% if menu_item.children %}
+                {% for child in menu_item.children %}
                     {% with menu_item=child template_name="draw_menu/draw_menu_tree.html" %}
                        {% include template_name %}
                     {% endwith %}
