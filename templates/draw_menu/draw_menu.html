@@ -18,4 +18,10 @@
             this.classList.toggle("fa-minus");
         });
     }
+    var current_element = document.getElementsByClassName("current-visible");
+    while (!current_element.parentElement.querySelector('.tree-root')) {
+        current_element.querySelector(".nested").classList.toggle("active");
+        current_element = current_element.parentElement;
+    }
+
 </script>

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load draw_menu %}
 
 {% block extrahead %}
 
@@ -7,5 +8,7 @@
 {% endblock extrahead %}
 
 {% block content %}
-    <h1>Разные меню</h1>
+    <h1 class="text-center"><a href="{% url 'home' %}" class="text-reset text-decoration-none">Разные меню</a></h1>
+    <h1 class="text-center"> {{ request.path }} </h1>
+{% draw_menu 'main_menu' %}
 {% endblock content %}

@@ -1,5 +1,5 @@
-def group_by_menu_items(menu_items):
-    menu_items.insert(0, {'parent_menu_item_id': -1, 'id': 'root'})
+def group_by_menu_items(menu_items, current_url):
+    menu_items.insert(0, {'parent_menu_item_id': -1, 'id': 'root', 'link': -1})
 
     for item in menu_items:
         item['children'] = []
@@ -12,6 +12,8 @@ def group_by_menu_items(menu_items):
     result_dict = menu_items[0]
 
     def insert(tree, node):
+        if node["link"] == current_url:
+            node["active_flag"] = True
         if node["parent_menu_item_id"] == tree["id"]:
             if "children" not in tree:
                 tree["children"] = [node]

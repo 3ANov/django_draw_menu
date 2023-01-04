@@ -19,7 +19,7 @@ class MenuItem(models.Model):
     """
     menu_id = models.ForeignKey('Menu', on_delete=models.CASCADE, verbose_name='Меню')
     menu_item_text = models.CharField(max_length=100, blank=False, verbose_name='Название пунтка меню')
-    link = models.URLField(blank=True)
+    link = models.CharField(blank=True, max_length=100, verbose_name='Ссылка на страницу сайта')
     parent_menu_item = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True,
                                          related_name='children_menu_item', verbose_name='Родительский подпункт меню')
 
