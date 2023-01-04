@@ -1,0 +1,10 @@
+[
+{
+  "model": "draw_menu.menu",
+  "pk": 1,
+  "fields": {
+    "menu_name": "main_menu",
+    "title": "Основное меню"
+  }
+}
+]

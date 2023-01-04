@@ -1,0 +1,102 @@
+[
+{
+  "model": "draw_menu.menuitem",
+  "pk": 1,
+  "fields": {
+    "menu_id": 1,
+    "menu_item_text": "пункт 1",
+    "link": "",
+    "parent_menu_item": null
+  }
+},
+{
+  "model": "draw_menu.menuitem",
+  "pk": 2,
+  "fields": {
+    "menu_id": 1,
+    "menu_item_text": "пункт 2",
+    "link": "",
+    "parent_menu_item": null
+  }
+},
+{
+  "model": "draw_menu.menuitem",
+  "pk": 3,
+  "fields": {
+    "menu_id": 1,
+    "menu_item_text": "пункт 1.1",
+    "link": "/punkt-1-1/",
+    "parent_menu_item": 1
+  }
+},
+{
+  "model": "draw_menu.menuitem",
+  "pk": 4,
+  "fields": {
+    "menu_id": 1,
+    "menu_item_text": "пункт 1.2",
+    "link": "",
+    "parent_menu_item": 1
+  }
+},
+{
+  "model": "draw_menu.menuitem",
+  "pk": 5,
+  "fields": {
+    "menu_id": 1,
+    "menu_item_text": "пункт 1.3",
+    "link": "",
+    "parent_menu_item": 1
+  }
+},
+{
+  "model": "draw_menu.menuitem",
+  "pk": 6,
+  "fields": {
+    "menu_id": 1,
+    "menu_item_text": "пункт 1.1.1",
+    "link": "",
+    "parent_menu_item": 3
+  }
+},
+{
+  "model": "draw_menu.menuitem",
+  "pk": 7,
+  "fields": {
+    "menu_id": 1,
+    "menu_item_text": "пункт 2.1",
+    "link": "",
+    "parent_menu_item": 2
+  }
+},
+{
+  "model": "draw_menu.menuitem",
+  "pk": 8,
+  "fields": {
+    "menu_id": 1,
+    "menu_item_text": "пункт 2.2",
+    "link": "/punkt-2/punkt-2-2/",
+    "parent_menu_item": 2
+  }
+},
+{
+  "model": "draw_menu.menuitem",
+  "pk": 9,
+  "fields": {
+    "menu_id": 1,
+    "menu_item_text": "пункт 2.1.1",
+    "link": "",
+    "parent_menu_item": 7
+  }
+},
+{
+  "model": "draw_menu.menuitem",
+  "pk": 10,
+  "fields": {
+    "menu_id": 1,
+    "menu_item_text": "пункт 1.1.1.1",
+    "link": "/punkt-1/punkt-1-1/",
+    "parent_menu_item": 6
+  }
+}
+]
