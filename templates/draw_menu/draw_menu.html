@@ -1,6 +1,6 @@
 {% load static %}
 <div class="row">
-    <div class="col-4">
+    <div class="col-4 tree-root">
         {% for menu_item in menu_items %}
             {% include "draw_menu/draw_menu_tree.html" %}
         {% endfor %}
@@ -18,10 +18,28 @@
             this.classList.toggle("fa-minus");
         });
     }
-    var current_element = document.getElementsByClassName("current-visible");
-    while (!current_element.parentElement.querySelector('.tree-root')) {
-        current_element.querySelector(".nested").classList.toggle("active");
-        current_element = current_element.parentElement;
+
+    function getParents(el, parentSelector /* optional */) {
+        // If no parentSelector defined will bubble up all the way to *document*
+        if (parentSelector === undefined) {
+            parentSelector = document;
+        }
+        var parents_list = [];
+        var parent = el.parentNode;
+        while (parent !== parentSelector) {
+            var current = parent;
+            parents_list.push(current);
+            parent = current.parentNode;
+        }
+        parents_list.push(parentSelector); // Push that parentSelector you wanted to stop at
+        return parents_list;
     }
+    var parents_of_current_tree_element = getParents( document.getElementsByClassName('visible_current_item')[0], document.getElementsByClassName('tree-root')[0]);
+    for(i = 0; i < parents_of_current_tree_element.length; i++) {
+        if(parents_of_current_tree_element[i].classList.contains('nested')){
+            parents_of_current_tree_element[i].classList.toggle("active")
+        }
+    }
+
 
 </script>
