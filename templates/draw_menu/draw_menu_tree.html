@@ -1,5 +1,11 @@
-<li><a class="" href="{{ menu_item.link }}">{{ menu_item.menu_item_text }}</a></li>
-        <ul class="">
+<li class="list-group-item">
+    {% if menu_item.children %} <i class="fas fa-plus caret"></i> {% endif %}
+    {% if not menu_item.link %}
+        <span class="">{{ menu_item.menu_item_text }}</span>
+        {% else %}
+        <a class="" href="{{ menu_item.link }}">{{ menu_item.menu_item_text }}</a>
+    {% endif %}
+        <ul class="nested">
             {% if menu_item.children %}
                 {% for child in menu_item.children %}
                     {% with menu_item=child template_name="draw_menu/draw_menu_tree.html" %}

@@ -1,5 +1,21 @@
-<div class="">
-    {% for menu_item in menu_items %}
-        {% include "draw_menu/draw_menu_tree.html" %}
-    {% endfor %}
+{% load static %}
+<div class="row">
+    <div class="col-4">
+        {% for menu_item in menu_items %}
+            {% include "draw_menu/draw_menu_tree.html" %}
+        {% endfor %}
+    </div>
 </div>
+
+<script>
+    var toggler = document.getElementsByClassName("caret");
+    var i;
+
+    for (i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function () {
+            this.parentElement.querySelector(".nested").classList.toggle("active");
+            this.classList.toggle("fa-plus");
+            this.classList.toggle("fa-minus");
+        });
+    }
+</script>
