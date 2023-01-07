@@ -25,6 +25,9 @@
             parentSelector = document;
         }
         var parents_list = [];
+        if(el === undefined){
+            return [];
+        }
         var parent = el.parentNode;
         while (parent !== parentSelector) {
             var current = parent;

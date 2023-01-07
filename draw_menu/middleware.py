@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import connection
 
 
@@ -7,5 +9,7 @@ class SqlQueryCounterMiddleware:
 
     def __call__(self, request):
         response = self.get_response(request)
-        print(str(len(connection.queries)) + " queries")
+        now = datetime.now()
+        count_queries = str(len(connection.queries))
+        print(f"{count_queries} queries in {now}")
         return response
